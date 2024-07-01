@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "Phishing Link Checker",
+  "version": "1.0",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "notifications",
+    "http://localhost/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://outlook.com/*", "https://mail.naver.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "https://outlook.com/*",
+    "https://mail.naver.com/*"
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
+}
